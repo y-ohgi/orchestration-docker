@@ -1,0 +1,36 @@
+version: 2.1
+jobs:
+  publish:
+    docker:
+      - image: squidfunk/mkdocs-material
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "5b:44:b2:20:35:68:58:60:13:ca:d8:83:8e:71:1d:62"
+      - checkout
+      - run:
+          name: Build
+          command: |
+            mv .git /tmp/
+            cd mkdocs
+            mkdocs build
+            cp -r site/* /tmp/
+      - run:
+          name: Publish
+          command: |
+            cd /tmp/
+            apk add --no-cache git openssh-client
+            git config user.email "circleci@circle.com"
+            git config user.name "circleci"
+            git checkout --orphan gh-pages
+            git add . && git commit -m "[ci skip] Publish"
+            git push --force origin gh-pages
+
+workflows:
+  version: 2
+  publish:
+    jobs:
+    - publish:
+        filters:
+          branches:
+            only: master
