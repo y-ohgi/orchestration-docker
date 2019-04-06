@@ -17,6 +17,10 @@
 - [クイックスタート  |  Kubernetes Engine のドキュメント  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/quickstart?hl=ja)
     - 日本語だと翻訳が追いついてない箇所があるので、可能であれば英語で読むと良いでしょう
 
+## EKS
+- [Amazon EKS Workshop :: Amazon EKS Workshop](https://eksworkshop.com/)
+    - AWSのマネージドKubernetes、EKSのハンズオン
+
 ## エコシステム
 - [cncf/landscape](https://github.com/cncf/landscape)
     - クラウドネイティブなプロダクトをホスト
