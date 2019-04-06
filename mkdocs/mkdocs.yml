@@ -38,13 +38,11 @@ extra_javascript:
   - 'assets/custom.js'
 
 nav:
-  - 'Home':
-    - 'About': 'index.md'
-    - 'オーケストレーションツールとは': 'index.md'
-  - 'WIP: docker-compose':
-    - 'About': 'docker-compose/index.md'
-    - 'ハンズオン': 'docker-compose/handson.md'
-  - 'WIP: swarm':
+  - 'Home': 'index.md'
+  # - 'WIP: docker-compose':
+  #   - 'About': 'docker-compose/index.md'
+  #   - 'ハンズオン': 'docker-compose/handson.md'
+  - 'swarm':
     - 'About': 'swarm/index.md'
     - 'ハンズオン': 'swarm/handson.md'
   - 'WIP: ECS':
