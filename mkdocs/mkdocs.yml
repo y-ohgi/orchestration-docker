@@ -1,4 +1,4 @@
-site_name: 'コンテナオーケストレーションツール ハンズオン'
+site_name: 'オーケストレーションツール'
 
 theme:
   name: 'material'
@@ -29,6 +29,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
+google_analytics: ['UA-137771737-1', 'y-ohgi.com']
+
 extra_css:
   - 'assets/custom.css'
 
@@ -36,4 +38,24 @@ extra_javascript:
   - 'assets/custom.js'
 
 nav:
-  - 'Home': 'index.md'
+  - 'Home':
+    - 'About': 'index.md'
+    - 'オーケストレーションツールとは': 'index.md'
+  - 'WIP: docker-compose':
+    - 'About': 'docker-compose/index.md'
+    - 'ハンズオン': 'docker-compose/handson.md'
+  - 'WIP: swarm':
+    - 'About': 'swarm/index.md'
+    - 'ハンズオン': 'swarm/handson.md'
+  - 'WIP: ECS':
+    - 'About': 'ecs/index.md'
+    - 'AWSの準備': 'ecs/aws.md'
+    - 'nginxを動かす': 'ecs/nginx.md'
+    - '自作アプリを動かす': 'ecs/selfmade.md'
+  - 'Kubernetes':
+    - 'Kubernetesとは': 'kubernetes/index.md'
+    - 'GKEを触ってみる': 'kubernetes/cluster.md'
+    - 'Objectsについて知る': 'kubernetes/objects.md'
+    - 'コードで定義する': 'kubernetes/manifest.md'
+    - '自作アプリを動かす': 'kubernetes/selfmade.md'
+    - '最後に': 'kubernetes/finally.md'
