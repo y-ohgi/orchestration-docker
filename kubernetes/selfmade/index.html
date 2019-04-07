@@ -1,0 +1,879 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>自作アプリを動かす - オーケストレーションツール</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/custom.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-137771737-1", "y-ohgi.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#express" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="オーケストレーションツール" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              オーケストレーションツール
+            </span>
+            <span class="md-header-nav__topic">
+              自作アプリを動かす
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="オーケストレーションツール" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    オーケストレーションツール
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      swarm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        swarm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../swarm/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../swarm/handson/" title="ハンズオン" class="md-nav__link">
+      ハンズオン
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      WIP: ECS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        WIP: ECS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/aws.md" title="AWSの準備" class="md-nav__link">
+      AWSの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/nginx.md" title="nginxを動かす" class="md-nav__link">
+      nginxを動かす
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/selfmade.md" title="自作アプリを動かす" class="md-nav__link">
+      自作アプリを動かす
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Kubernetesとは" class="md-nav__link">
+      Kubernetesとは
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cluster/" title="GKEを触ってみる" class="md-nav__link">
+      GKEを触ってみる
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../objects/" title="Objectsについて知る" class="md-nav__link">
+      Objectsについて知る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manifest/" title="コードで定義する" class="md-nav__link">
+      コードで定義する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        自作アプリを動かす
+      </label>
+    
+    <a href="./" title="自作アプリを動かす" class="md-nav__link md-nav__link--active">
+      自作アプリを動かす
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#express" title="Expressプロジェクトを作成" class="md-nav__link">
+    Expressプロジェクトを作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express_1" title="ローカルにExpressのコードが展開されていることを確認" class="md-nav__link">
+    ローカルにExpressのコードが展開されていることを確認
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express_2" title="Expressのコードを編集" class="md-nav__link">
+    Expressのコードを編集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfileの作成" class="md-nav__link">
+    Dockerfileの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcrpush" title="GCRへpush" class="md-nav__link">
+    GCRへpush
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="デプロイ" class="md-nav__link">
+    デプロイ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="ロードバランサのセットアップ" class="md-nav__link">
+    ロードバランサのセットアップ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="増やしてみる" class="md-nav__link">
+    増やしてみる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="お片付け" class="md-nav__link">
+    お片付け
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../finally/" title="最後に" class="md-nav__link">
+      最後に
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#express" title="Expressプロジェクトを作成" class="md-nav__link">
+    Expressプロジェクトを作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express_1" title="ローカルにExpressのコードが展開されていることを確認" class="md-nav__link">
+    ローカルにExpressのコードが展開されていることを確認
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#express_2" title="Expressのコードを編集" class="md-nav__link">
+    Expressのコードを編集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfileの作成" class="md-nav__link">
+    Dockerfileの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcrpush" title="GCRへpush" class="md-nav__link">
+    GCRへpush
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="デプロイ" class="md-nav__link">
+    デプロイ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="ロードバランサのセットアップ" class="md-nav__link">
+    ロードバランサのセットアップ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="増やしてみる" class="md-nav__link">
+    増やしてみる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="お片付け" class="md-nav__link">
+    お片付け
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>自作アプリを動かす</h1>
+                
+                <p><img alt="express" src="../imgs/selfmade-express.png" /></p>
+<p>この章ではDockerイメージの作成を行い、GCPのDockerレジストリのGCRへpushし、そのイメージをGKE上で立ち上げてみます。<br />
+GKEをプロダクションで使う場合はDockerイメージの格納にGCRを使うのが一般的でしょう。</p>
+<h2 id="express">Expressプロジェクトを作成<a class="headerlink" href="#express" title="Permanent link">&para;</a></h2>
+<p>まずはExpressフレームワークをローカルで作成します。<br />
+Cloud Shell にはnodeが入っているのでそれを使ってもよいのですが、Dockerの使い方の1つである「ホストの環境を汚さずにコマンドを実行できる」ことを体験するためにDockerでnodeの環境を用意します。</p>
+<p>Nodeのシェル起動します。<br />
+ここで重要なのは現在のディレクトリをコンテナの <code>/data</code> へマウントしていることです。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker run -it -p <span class="m">3000</span>:3000 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/data node:10-alpine ash
+</pre></div>
+
+
+<p>コンテナ内に入った後、Node.jsが存在することを確認します。</p>
+<div class="codehilite"><pre><span></span><span class="gp">#</span> node -v
+<span class="go">v10.15.3</span>
+</pre></div>
+
+
+<p>Expressプロジェクトの作成を行います。</p>
+<div class="codehilite"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> /data
+<span class="gp">#</span> npm install -g express-generator
+<span class="gp">#</span> express myapp
+<span class="gp">#</span> <span class="nb">cd</span> myapp
+<span class="gp">#</span> npm install
+</pre></div>
+
+
+<p>ここでシェルを抜けずに <code># npm start</code> でExpressを起動すると、3000ポートでExpressの起動を確認することができます。</p>
+<h2 id="express_1">ローカルにExpressのコードが展開されていることを確認<a class="headerlink" href="#express_1" title="Permanent link">&para;</a></h2>
+<p>Nodeコンテナからexitし、ホストにExpressのコードが存在することを確認します。</p>
+<div class="codehilite"><pre><span></span><span class="gp">#</span> <span class="nb">exit</span>
+<span class="gp">$</span> ls
+<span class="go">myapp</span>
+<span class="gp">$</span> ls myapp/
+<span class="go">bin             node_modules       package.json      routes</span>
+<span class="go">app.js          package-lock.json  public            views</span>
+</pre></div>
+
+
+<h2 id="express_2">Expressのコードを編集<a class="headerlink" href="#express_2" title="Permanent link">&para;</a></h2>
+<p>ホストネームを表示させるようにして、複数台コンテナを立てたときに別のコンテナにアクセスできていることを確認できるようにします。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> vi routes/index.js
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>var express = require(&#39;express&#39;);
+var router = express.Router();
+<span class="gi">+var os = require(&#39;os&#39;);</span>
+
+/* GET home page. */
+router.get(&#39;/&#39;, function(req, res, next) {
+<span class="gd">-  res.render(&#39;index&#39;, { title: &#39;Express&#39; });</span>
+<span class="gi">+  res.render(&#39;index&#39;, { title: os.hostname() });</span>
+});
+
+module.exports = router;
+</pre></div>
+
+
+<h2 id="dockerfile">Dockerfileの作成<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> vi Dockerfile
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> node:10-alpine</span>
+
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+
+<span class="k">COPY</span> package.json package-lock.json /app/
+
+<span class="k">RUN</span> npm install
+
+<span class="k">COPY</span> . .
+
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;npm&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker build -t myapp .
+<span class="gp">$</span> docker run -p <span class="m">3000</span>:3000 myapp
+</pre></div>
+
+
+<p><a href="http://localhost:3000">http://localhost:3000</a> へアクセスして確認</p>
+<h2 id="gcrpush">GCRへpush<a class="headerlink" href="#gcrpush" title="Permanent link">&para;</a></h2>
+<p>Google Container Registry へ作成したイメージを登録します。</p>
+<p>pushをするためにGCRの命名規則に則ったtagをイメージへ付与します</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nv">prjid</span><span class="o">=</span><span class="k">$(</span>gcloud config get-value project<span class="k">)</span>
+<span class="gp">$</span> docker tag myapp asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>/myapp
+</pre></div>
+
+
+<p>GCRの認証を行い、作成したイメージをpushします。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> gcloud auth configure-docker
+<span class="gp">$</span> docker push asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>/myapp
+</pre></div>
+
+
+<h2 id="_1">デプロイ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>GCRへ上げたイメージを使ってExpressをデプロイを実行</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl run myapp --image<span class="o">=</span>asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>/myapp
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>myapp
+<span class="go">NAME                       READY   STATUS    RESTARTS   AGE</span>
+<span class="go">pod/myapp-959b77d8-gm8dt   1/1     Running   0          37s</span>
+
+<span class="go">NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/myapp   1         1         1            1           38s</span>
+
+<span class="go">NAME                             DESIRED   CURRENT   READY   AGE</span>
+<span class="go">replicaset.apps/myapp-959b77d8   1         1         1       38s</span>
+</pre></div>
+
+
+<h2 id="_2">ロードバランサのセットアップ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>kubectl expose</code> でロードバランサのセットアップを行います。  </p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl expose deploy myapp --port<span class="o">=</span><span class="m">80</span> --target-port<span class="o">=</span><span class="m">3000</span> --type<span class="o">=</span>LoadBalancer
+<span class="go">service/myapp exposed</span>
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>myapp
+<span class="go">NAME                       READY   STATUS    RESTARTS   AGE</span>
+<span class="go">pod/myapp-959b77d8-gm8dt   1/1     Running   0          9m</span>
+
+<span class="go">NAME            TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">service/myapp   LoadBalancer   10.3.242.32   34.85.67.170   80:31345/TCP   7m</span>
+
+<span class="go">NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/myapp   1         1         1            1           9m</span>
+
+<span class="go">NAME                             DESIRED   CURRENT   READY   AGE</span>
+<span class="go">replicaset.apps/myapp-959b77d8   1         1         1       9m</span>
+</pre></div>
+
+
+<p><img alt="expose" src="../imgs/selfmade-expose.png" /></p>
+<h2 id="_3">増やしてみる<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>kubectl scale</code> コマンドでPodを3台に増やしてみましょう</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl scale deployment myapp --replicas<span class="o">=</span><span class="m">3</span>
+<span class="go">deployment.extensions/myapp scaled</span>
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>myapp
+<span class="go">NAME                       READY   STATUS    RESTARTS   AGE</span>
+<span class="go">pod/myapp-959b77d8-gm8dt   1/1     Running   0          12m</span>
+<span class="go">pod/myapp-959b77d8-rcw8d   1/1     Running   0          24s</span>
+<span class="go">pod/myapp-959b77d8-tgzdx   1/1     Running   0          24s</span>
+
+<span class="go">NAME            TYPE           CLUSTER-IP    EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">service/myapp   LoadBalancer   10.3.242.32   34.85.67.170   80:31345/TCP   10m</span>
+
+<span class="go">NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/myapp   3         3         3            3           12m</span>
+
+<span class="go">NAME                             DESIRED   CURRENT   READY   AGE</span>
+<span class="go">replicaset.apps/myapp-959b77d8   3         3         3       12m</span>
+</pre></div>
+
+
+<p>時間をあけて何度かアクセスしてみるとホスト名がかわっていることがわかります（キャッシュに注意）。</p>
+<h2 id="_4">お片付け<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>クラスタの削除</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> gcloud beta container clusters delete standard-cluster-1 --zone <span class="s2">&quot;asia-northeast1-a&quot;</span> 
+</pre></div>
+
+
+<p>Dockerイメージの削除</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> gcloud container images list --repository asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>
+<span class="go">NAME</span>
+<span class="go">asia.gcr.io/&lt;YOUR PROJECT ID&gt;/myapp</span>
+<span class="gp">$</span> gcloud container images delete asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>/myapp
+<span class="gp">$</span> gcloud container images list --repository asia.gcr.io/<span class="si">${</span><span class="nv">prjid</span><span class="si">}</span>
+<span class="go">Listed 0 items.</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../manifest/" title="コードで定義する" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                コードで定義する
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../finally/" title="最後に" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                最後に
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../assets/custom.js"></script>
+      
+    
+  </body>
+</html>

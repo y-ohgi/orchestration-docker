@@ -1,0 +1,1174 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Objectsについて知る - オーケストレーションツール</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#7e57c2">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../assets/custom.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-137771737-1", "y-ohgi.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="オーケストレーションツール" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              オーケストレーションツール
+            </span>
+            <span class="md-header-nav__topic">
+              Objectsについて知る
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="オーケストレーションツール" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    オーケストレーションツール
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      swarm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        swarm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../swarm/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../swarm/handson/" title="ハンズオン" class="md-nav__link">
+      ハンズオン
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      WIP: ECS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        WIP: ECS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/aws.md" title="AWSの準備" class="md-nav__link">
+      AWSの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/nginx.md" title="nginxを動かす" class="md-nav__link">
+      nginxを動かす
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ecs/selfmade.md" title="自作アプリを動かす" class="md-nav__link">
+      自作アプリを動かす
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Kubernetesとは" class="md-nav__link">
+      Kubernetesとは
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cluster/" title="GKEを触ってみる" class="md-nav__link">
+      GKEを触ってみる
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Objectsについて知る
+      </label>
+    
+    <a href="./" title="Objectsについて知る" class="md-nav__link md-nav__link--active">
+      Objectsについて知る
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="おさらい" class="md-nav__link">
+    おさらい
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" title="起動されているObjectsを知る" class="md-nav__link">
+    起動されているObjectsを知る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod" title="Pod" class="md-nav__link">
+    Pod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" title="ReplicaSet" class="md-nav__link">
+    ReplicaSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="コンテナの世代管理" class="md-nav__link">
+    コンテナの世代管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx114" title="nginx:1.14の起動" class="md-nav__link">
+    nginx:1.14の起動
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#podnginx115" title="Podをnginx:1.15へ更新する" class="md-nav__link">
+    Podをnginx:1.15へ更新する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicaset_1" title="ReplicaSetの確認" class="md-nav__link">
+    ReplicaSetの確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment_1" title="Deploymentの確認" class="md-nav__link">
+    Deploymentの確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="ロールバックする" class="md-nav__link">
+    ロールバックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="お片付け" class="md-nav__link">
+    お片付け
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" title="Service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../manifest/" title="コードで定義する" class="md-nav__link">
+      コードで定義する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../selfmade/" title="自作アプリを動かす" class="md-nav__link">
+      自作アプリを動かす
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../finally/" title="最後に" class="md-nav__link">
+      最後に
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="おさらい" class="md-nav__link">
+    おさらい
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects" title="起動されているObjectsを知る" class="md-nav__link">
+    起動されているObjectsを知る
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod" title="Pod" class="md-nav__link">
+    Pod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replicaset" title="ReplicaSet" class="md-nav__link">
+    ReplicaSet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="コンテナの世代管理" class="md-nav__link">
+    コンテナの世代管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx114" title="nginx:1.14の起動" class="md-nav__link">
+    nginx:1.14の起動
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#podnginx115" title="Podをnginx:1.15へ更新する" class="md-nav__link">
+    Podをnginx:1.15へ更新する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicaset_1" title="ReplicaSetの確認" class="md-nav__link">
+    ReplicaSetの確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment_1" title="Deploymentの確認" class="md-nav__link">
+    Deploymentの確認
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="ロールバックする" class="md-nav__link">
+    ロールバックする
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="お片付け" class="md-nav__link">
+    お片付け
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service" title="Service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Objectsについて知る</h1>
+                
+                <h2 id="_1">おさらい<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="goal" src="../imgs/gke-first-goal.png" /></p>
+<p>前回の章では以下の2つのコマンドを実行してNginxを公開しました。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl run handson --image nginx --port <span class="m">80</span>
+<span class="gp">$</span> kubectl expose deploy handson --port<span class="o">=</span><span class="m">80</span> --target-port<span class="o">=</span><span class="m">80</span> --type<span class="o">=</span>LoadBalancer
+</pre></div>
+
+
+<p>そして、以下のように複数のObjectsが立ち上がりました。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get all
+<span class="go">NAME                           READY     STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-86f796b8b7-m68sr   1/1       Running   0          4m</span>
+<span class="go">NAME                 TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">service/handson      LoadBalancer   10.3.243.4   34.85.67.170   80:32621/TCP   4m</span>
+<span class="go">service/kubernetes   ClusterIP      10.3.240.1   &lt;none&gt;         443/TCP        2h</span>
+<span class="go">NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson   1         1         1            1           4m</span>
+<span class="go">NAME                                 DESIRED   CURRENT   READY     AGE</span>
+<span class="go">replicaset.apps/handson-86f796b8b7   1         1         1         4m</span>
+</pre></div>
+
+
+<h2 id="objects">起動されているObjectsを知る<a class="headerlink" href="#objects" title="Permanent link">&para;</a></h2>
+<p><img alt="goal" src="../imgs/gke-objects-goal.png" /></p>
+<p>立ち上げたObjectsについて学んでみましょう。<br />
+4つのObjectsが実際に立ち上がっています。それぞれ何をしているか簡単に説明します</p>
+<ul>
+<li>Pod<ul>
+<li>Dockerコンテナの管理</li>
+</ul>
+</li>
+<li>ReplicaSet<ul>
+<li>Podを設定された台数分維持</li>
+</ul>
+</li>
+<li>Deployment<ul>
+<li>ReplicaSetのバージョニング</li>
+</ul>
+</li>
+<li>Service<ul>
+<li>LoadBalancerの管理</li>
+</ul>
+</li>
+</ul>
+<h2 id="pod">Pod<a class="headerlink" href="#pod" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get pod
+<span class="go">NAME                       READY     STATUS    RESTARTS   AGE</span>
+<span class="go">handson-86f796b8b7-m68sr   1/1       Running   0          1h</span>
+</pre></div>
+
+
+<p>PodはKubernetes上で動かすコンテナです。  </p>
+<p>Kubernetesはコンテナを動かすためのツールである通り、Pod(コンテナ)を起点に様々なObjectsが存在します。<br />
+Podは1つ以上のコンテナで構成され、Pod単位でスケールします。<br />
+また、Pod単位でIPを持ち、インターネットへの通信はNodeのGlobal IP へ変換されます。</p>
+<h2 id="replicaset">ReplicaSet<a class="headerlink" href="#replicaset" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get replicaset
+<span class="go">NAME                 DESIRED   CURRENT   READY     AGE</span>
+<span class="go">handson-86f796b8b7   1         1         1         1h</span>
+</pre></div>
+
+
+<p>ReplicaSetはPodを指定された台数分のコンテナを維持するための仕組みです。  </p>
+<p>試しにPodを削除して、復帰するか確認してみましょう。</p>
+<p>Podを削除し、新しいPodが立ち上がるかためしてみましょう</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get pod
+<span class="go">NAME                       READY     STATUS    RESTARTS   AGE</span>
+<span class="go">handson-86f796b8b7-m68sr   1/1       Running   0          2h</span>
+<span class="gp">$</span> kubectl delete pod handson-86f796b8b7-m68sr
+<span class="go">pod &quot;handson-86f796b8b7-m68sr&quot; deleted</span>
+<span class="gp">$</span> kubectl get pod
+<span class="go">NAME                       READY     STATUS    RESTARTS   AGE</span>
+<span class="go">handson-86f796b8b7-9dw95   1/1       Running   0          14s</span>
+</pre></div>
+
+
+<p>ReplicaSetはPodの台数も管理します。<br />
+新しく <strong>"handson-2"</strong> という名前でnginxコンテナを3台立ててみましょう</p>
+<p>まずは現在"handson"のObjectsしかないことを確認します</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get all
+<span class="go">NAME                           READY     STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-86f796b8b7-9dw95   1/1       Running   0          14m</span>
+
+<span class="go">NAME                 TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">service/handson      LoadBalancer   10.3.243.4   34.85.67.170   80:32621/TCP   2h</span>
+<span class="go">service/kubernetes   ClusterIP      10.3.240.1   &lt;none&gt;         443/TCP        4h</span>
+
+<span class="go">NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson   1         1         1            1           2h</span>
+
+<span class="go">NAME                                 DESIRED   CURRENT   READY     AGE</span>
+<span class="go">replicaset.apps/handson-86f796b8b7   1         1         1         2h</span>
+</pre></div>
+
+
+<p>次に、新しく <strong>"handson-2"</strong> という名前でnginxコンテナを3台立ち上げます。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl run handson-2 --image<span class="o">=</span>nginx --replicas<span class="o">=</span><span class="m">3</span>
+<span class="go">deployment.apps/handson-2 created</span>
+</pre></div>
+
+
+<p>"handson-2"のObjects郡が立ち上がったか確認しましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get all
+<span class="go">NAME                             READY     STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-2-55fcc96bc8-d6vgq   1/1       Running   0          6s</span>
+<span class="go">pod/handson-2-55fcc96bc8-gjfdq   1/1       Running   0          6s</span>
+<span class="go">pod/handson-2-55fcc96bc8-hlh5z   1/1       Running   0          6s</span>
+<span class="go">pod/handson-86f796b8b7-9dw95     1/1       Running   0          15m</span>
+
+<span class="go">NAME                 TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">service/handson      LoadBalancer   10.3.243.4   34.85.67.170   80:32621/TCP   2h</span>
+<span class="go">service/kubernetes   ClusterIP      10.3.240.1   &lt;none&gt;         443/TCP        4h</span>
+
+<span class="go">NAME                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson     1         1         1            1           2h</span>
+<span class="go">deployment.apps/handson-2   3         3         3            3           6s</span>
+
+<span class="go">NAME                                   DESIRED   CURRENT   READY     AGE</span>
+<span class="go">replicaset.apps/handson-2-55fcc96bc8   3         3         3         6s</span>
+<span class="go">replicaset.apps/handson-86f796b8b7     1         1         1         2h</span>
+</pre></div>
+
+
+<p>新しく "handson-2" というObjects郡が作成されました。  </p>
+<p>情報が多いと感じる場合は <code>-l</code> オプションで"handson-2"だけフィルタして表示することも可能です。  </p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>handson-2
+<span class="go">NAME                             READY     STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-2-55fcc96bc8-d6vgq   1/1       Running   0          4m</span>
+<span class="go">pod/handson-2-55fcc96bc8-gjfdq   1/1       Running   0          4m</span>
+<span class="go">pod/handson-2-55fcc96bc8-hlh5z   1/1       Running   0          4m</span>
+
+<span class="go">NAME                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson-2   3         3         3            3           4m</span>
+
+<span class="go">NAME                                   DESIRED   CURRENT   READY     AGE</span>
+<span class="go">replicaset.apps/handson-2-55fcc96bc8   3         3         3         4m</span>
+</pre></div>
+
+
+<p>Podを1台削除して、3台の状態が維持されるか確認してみましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl delete pod handson-2-55fcc96bc8-d6vgq
+<span class="go">pod &quot;handson-2-55fcc96bc8-d6vgq&quot; deleted</span>
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>handson-2
+<span class="go">NAME                             READY     STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-2-55fcc96bc8-fn6gm   1/1       Running   0          17s</span>
+<span class="go">pod/handson-2-55fcc96bc8-gjfdq   1/1       Running   0          6m</span>
+<span class="go">pod/handson-2-55fcc96bc8-hlh5z   1/1       Running   0          6m</span>
+
+<span class="go">NAME                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson-2   3         3         3            3           6m</span>
+
+<span class="go">NAME                                   DESIRED   CURRENT   READY     AGE</span>
+<span class="go">replicaset.apps/handson-2-55fcc96bc8   3         3         3         6m</span>
+</pre></div>
+
+
+<p>最後に、"handson-2"のObjects郡を削除します。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl delete deploy/handson-2
+<span class="go">deployment.extensions &quot;handson-2&quot; deleted</span>
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>handson-2
+<span class="go">No resources found.</span>
+</pre></div>
+
+
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get deployment
+<span class="go">NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">handson   1         1         1            1           2h</span>
+</pre></div>
+
+
+<p>DeploymentはReplicaSetの世代管理を行います。</p>
+<p>ReplicaSetがPodを管理するのに対し、DeploymentはReplicaSetの管理を行います。<br />
+Deploymentにはローリングアップデート・ロールバックの機能が備わっており、運用に非常に役立ちます。</p>
+<p><code>kubectl run</code> を実行するとDeployment・Replica Set・Podの3つのObjectsを立ち上げて協調して動作させます。</p>
+<h3 id="_2">コンテナの世代管理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><img alt="versioning" src="../imgs/k8s-deploy-versioning.png" /></p>
+<p>Podはコンテナ、ReplicaSetはPodの管理、DeploymentはReplicaSetの世代管理、、、と言ってもすぐには理解しづらいと思います。  </p>
+<p>なので、実際にこのObjectsがどう動くのか見てみましょう。<br />
+「 <code>nginx:1.14</code> のDockerイメージを起動後、 <code>nginx:1.15</code> へアップデート」を目標にしてみます。</p>
+<h4 id="nginx114">nginx:1.14の起動<a class="headerlink" href="#nginx114" title="Permanent link">&para;</a></h4>
+<p>"handson-3" という名前でnginxの1.14のバージョンを立ち上げてみましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl run handson-3 --image<span class="o">=</span>nginx:1.14
+<span class="go">deployment.apps/handson-3 created</span>
+<span class="gp">$</span> kubectl get all -l <span class="nv">run</span><span class="o">=</span>handson-3
+<span class="go">NAME                             READY   STATUS    RESTARTS   AGE</span>
+<span class="go">pod/handson-3-85dfb7fd88-wr58c   1/1     Running   0          3m</span>
+
+<span class="go">NAME                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">deployment.apps/handson-3   1         1         1            1           3m</span>
+
+<span class="go">NAME                                   DESIRED   CURRENT   READY   AGE</span>
+<span class="go">replicaset.apps/handson-3-85dfb7fd88   1         1         1       3m</span>
+</pre></div>
+
+
+<p>まず、nginxの1.14イメージが立ち上がっているかPodの詳細情報を確認します。<br />
+Podの詳細情報を確認するには <code>kubectl describe pod &lt;POD名&gt;</code> で確認することができます。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl describe pod handson-3-85dfb7fd88-wr58c
+<span class="go">Name:               handson-3-85dfb7fd88-wr58c</span>
+<span class="go">Namespace:          default</span>
+<span class="go">Priority:           0</span>
+<span class="go">PriorityClassName:  &lt;none&gt;</span>
+<span class="go">Node:               gke-standard-cluster-1-default-pool-1688f5b9-ssc0/10.146.0.3</span>
+<span class="go">Start Time:         Sat, 06 Apr 2019 19:16:51 +0900</span>
+<span class="go">Labels:             pod-template-hash=4189639844</span>
+<span class="go">                    run=handson-3</span>
+<span class="go">Annotations:        kubernetes.io/limit-ranger: LimitRanger plugin set: cpu request for container handson-3</span>
+<span class="go">Status:             Running</span>
+<span class="go">IP:                 10.0.0.14</span>
+<span class="go">Controlled By:      ReplicaSet/handson-3-85dfb7fd88</span>
+<span class="go">Containers:</span>
+<span class="go">  handson-3:</span>
+<span class="go">    Container ID:   docker://d7976c0aea18735d1d1e407832c45a3f24f905f6deee7358ece8a0aebf1a0678</span>
+<span class="go">    Image:          nginx:1.14</span>
+<span class="go">    Image ID:       docker-pullable://nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d</span>
+<span class="go">    Port:           &lt;none&gt;</span>
+<span class="go">    Host Port:      &lt;none&gt;</span>
+<span class="go">    State:          Running</span>
+<span class="go">      Started:      Sat, 06 Apr 2019 19:16:59 +0900</span>
+<span class="go">    Ready:          True</span>
+<span class="go">    Restart Count:  0</span>
+<span class="go">    Requests:</span>
+<span class="go">      cpu:        100m</span>
+<span class="go">    Environment:  &lt;none&gt;</span>
+<span class="go">    Mounts:</span>
+<span class="go">      /var/run/secrets/kubernetes.io/serviceaccount from default-token-zt5ql (ro)</span>
+<span class="go">Conditions:</span>
+<span class="go">  Type              Status</span>
+<span class="go">  Initialized       True</span>
+<span class="go">  Ready             True</span>
+<span class="go">  ContainersReady   True</span>
+<span class="go">  PodScheduled      True</span>
+<span class="go">Volumes:</span>
+<span class="go">  default-token-zt5ql:</span>
+<span class="go">    Type:        Secret (a volume populated by a Secret)</span>
+<span class="go">    SecretName:  default-token-zt5ql</span>
+<span class="go">    Optional:    false</span>
+<span class="go">QoS Class:       Burstable</span>
+<span class="go">Node-Selectors:  &lt;none&gt;</span>
+<span class="go">Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s</span>
+<span class="go">                 node.ubernetes.io/unreachable:NoExecute for 300s</span>
+<span class="go">Events:</span>
+<span class="go">  Type    Reason     Age    From                                                        Message</span>
+<span class="go">  ----    ------     ----   ----                                                        -------</span>
+<span class="go">  Normal  Scheduled  5m48s  default-scheduler                                           Successfully assigned default/handson-3-85dfb7fd88-wr58c to gke-standard-cluster-1-default-pool-1688f5b9-ssc0</span>
+<span class="go">  Normal  Pulling    5m47s  kubelet, gke-standard-cluster-1-default-pool-1688f5b9-ssc0  pulling image &quot;nginx:1.14&quot;</span>
+<span class="go">  Normal  Pulled     5m41s  kubelet, gke-standard-cluster-1-default-pool-1688f5b9-ssc0  Successfully pulled image &quot;nginx:1.14&quot;</span>
+<span class="go">  Normal  Created    5m40s  kubelet, gke-standard-cluster-1-default-pool-1688f5b9-ssc0  Created container</span>
+<span class="go">  Normal  Started    5m40s  kubelet, gke-standard-cluster-1-default-pool-1688f5b9-ssc0  Started container</span>
+</pre></div>
+
+
+<p>長いのでgrepでDockerイメージの情報だけ確認し、nginxの1.14が立ち上がっていることを確認しましょう。  </p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl describe pod handson-3-85dfb788-wr58c <span class="p">|</span> grep <span class="s2">&quot;Image:&quot;</span>
+<span class="go">    Image:          nginx:1.14</span>
+</pre></div>
+
+
+<h4 id="podnginx115">Podをnginx:1.15へ更新する<a class="headerlink" href="#podnginx115" title="Permanent link">&para;</a></h4>
+<p>Dockerイメージを更新するには <code>kubectl set image</code> を使用します。<br />
+"handson-3" を "nginx:1.15" へ変更しましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl <span class="nb">set</span> image deployment handson-3 handson-3<span class="o">=</span>nginx:1.15
+<span class="go">deployment.extensions/handson-3 image updated</span>
+</pre></div>
+
+
+<p>新しいPodが立ち上がっていることを確認し、そのPodが "nginx:1.15" になっていることを確認します。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get pods -l <span class="nv">run</span><span class="o">=</span>handson-3
+<span class="go">NAME                        READY   STATUS    RESTARTS   AGE</span>
+<span class="go">handson-3-fcb7464b5-kfslq   1/1     Running   0          1m</span>
+<span class="gp">$</span> kubectl describe pod handson-3-fcb7464b5-kfslq <span class="p">|</span> grep <span class="s2">&quot;Image:&quot;</span>
+<span class="go">    Image:          nginx:1.15</span>
+</pre></div>
+
+
+<h4 id="replicaset_1">ReplicaSetの確認<a class="headerlink" href="#replicaset_1" title="Permanent link">&para;</a></h4>
+<p>「ReplicaSetがPodの管理をしている」ので、ReplicaSetがPodの現在の状態を持っています。<br />
+まずはReplicaSetが <code>nginx:1.14</code> と <code>nginx:1.15</code> の2つの世代が存在するか確かめてみましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get replicaset -l <span class="nv">run</span><span class="o">=</span>handson-3
+<span class="go">NAME                   DESIRED   CURRENT   READY   AGE</span>
+<span class="go">handson-3-85dfb7fd88   0         0         0       32m</span>
+<span class="go">handson-3-fcb7464b5    1         1         1       19m</span>
+</pre></div>
+
+
+<p>まずは最初に立ち上げた"AGE"(起動時間)が古いもののDockerイメージが <code>nginx:1.14</code> の情報を持っているか確認してみましょう</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl describe replicaset handson-3-85dfb7fd88 <span class="p">|</span> grep <span class="s2">&quot;Image:&quot;</span>
+<span class="go">    Image:        nginx:1.14</span>
+</pre></div>
+
+
+<p>新しく起動したものが <code>nginx:1.15</code> になっているか確認します。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl describe replicaset handson-3-fcb7464b5 <span class="p">|</span> grep <span class="s2">&quot;Image:&quot;</span>
+<span class="go">    Image:        nginx:1.15</span>
+</pre></div>
+
+
+<p>Podを更新に追従して2つのReplicaSetが存在することが確認できました。  </p>
+<h4 id="deployment_1">Deploymentの確認<a class="headerlink" href="#deployment_1" title="Permanent link">&para;</a></h4>
+<p>「DeploymentがReplicaSetの世代管理をしている」ので、ReplicaSetの更新履歴をDeploymentは管理することができます。</p>
+<p>現在のDeploymentからReplicaSetの履歴を確認してみましょう。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl rollout <span class="nb">history</span> deployment handson-3
+<span class="go">deployment.extensions/handson-3</span>
+<span class="go">REVISION  CHANGE-CAUSE</span>
+<span class="go">1         &lt;none&gt;</span>
+<span class="go">2         &lt;none&gt;</span>
+</pre></div>
+
+
+<p>"REVISION"が2つ表示されました。<br />
+特定のREVISIONがどのような情報を持っているかは <code>--revision</code> オプションを使って詳細を確認できます。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl rollout <span class="nb">history</span> deployment handson-3 --revision<span class="o">=</span><span class="m">1</span>
+<span class="go">deployment.extensions/handson-3 with revision #1</span>
+<span class="go">Pod Template:</span>
+<span class="go">  Labels:       pod-template-hash=4189639844</span>
+<span class="go">        run=handson-3</span>
+<span class="go">  Containers:</span>
+<span class="go">   handson-3:</span>
+<span class="go">    Image:      nginx:1.14</span>
+<span class="go">    Port:       &lt;none&gt;</span>
+<span class="go">    Host Port:  &lt;none&gt;</span>
+<span class="go">    Environment:        &lt;none&gt;</span>
+<span class="go">    Mounts:     &lt;none&gt;</span>
+<span class="go">  Volumes:      &lt;none&gt;</span>
+<span class="gp">$</span> kubectl rollout <span class="nb">history</span> deployment handson-3 --revision<span class="o">=</span><span class="m">2</span>
+<span class="go">deployment.extensions/handson-3 with revision #2</span>
+<span class="go">Pod Template:</span>
+<span class="go">  Labels:       pod-template-hash=976302061</span>
+<span class="go">        run=handson-3</span>
+<span class="go">  Containers:</span>
+<span class="go">   handson-3:</span>
+<span class="go">    Image:      nginx:1.15</span>
+<span class="go">    Port:       &lt;none&gt;</span>
+<span class="go">    Host Port:  &lt;none&gt;</span>
+<span class="go">    Environment:        &lt;none&gt;</span>
+<span class="go">    Mounts:     &lt;none&gt;</span>
+<span class="go">  Volumes:      &lt;none&gt;</span>
+</pre></div>
+
+
+<h4 id="_3">ロールバックする<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>アプリケーションはロールアウトだけでなくロールバックも重要です。<br />
+実際に <code>nginx:1.15</code> から <code>nginx:1.14</code> へロールバックを試してみましょう。</p>
+<p><code>kubectl rollout undo</code> で1個前のバージョンを復元することが可能です。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl rollout undo deployment handson-3
+<span class="go">deployment.extensions/handson-3 rolled back</span>
+<span class="gp">$</span> kubectl rollout <span class="nb">history</span> deployment handson-3
+<span class="go">deployment.extensions/handson-3</span>
+<span class="go">REVISION  CHANGE-CAUSE</span>
+<span class="go">2         &lt;none&gt;</span>
+<span class="go">3         &lt;none&gt;</span>
+<span class="gp">$</span> kubectl rollout <span class="nb">history</span> deployment handson-3 --revision<span class="o">=</span><span class="m">3</span>
+<span class="go">deployment.extensions/handson-3 with revision #3</span>
+<span class="go">Pod Template:</span>
+<span class="go">  Labels:       pod-template-hash=4189639844</span>
+<span class="go">        run=handson-3</span>
+<span class="go">  Containers:</span>
+<span class="go">   handson-3:</span>
+<span class="go">    Image:      nginx:1.14</span>
+<span class="go">    Port:       &lt;none&gt;</span>
+<span class="go">    Host Port:  &lt;none&gt;</span>
+<span class="go">    Environment:        &lt;none&gt;</span>
+<span class="go">    Mounts:     &lt;none&gt;</span>
+<span class="go">  Volumes:      &lt;none&gt;</span>
+</pre></div>
+
+
+<h4 id="_4">お片付け<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>$ kubectl delete deploy handson-3
+</pre></div>
+
+
+<h2 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> kubectl get service
+<span class="go">NAME         TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)        AGE</span>
+<span class="go">handson      LoadBalancer   10.3.243.4   34.85.67.170   80:32621/TCP   1h</span>
+</pre></div>
+
+
+<p><strong>"Service"</strong> ObjectsはPod郡に対して外部からのエンドポイントを提供します。  </p>
+<p>今回であれば <code>nginx</code> を起動するPodを外部へ公開するために <strong>ロードバランサ</strong> を起動しました。<br />
+クラスター内の通信だけで完結するのであればロードバランサに大げさなものではなく、クラスター内専用のIPを作成することも可能です。<br />
+他にもServiceの種類は存在するので用途に合わせて選択すると良いでしょう。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../cluster/" title="GKEを触ってみる" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                GKEを触ってみる
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../manifest/" title="コードで定義する" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                コードで定義する
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../assets/custom.js"></script>
+      
+    
+  </body>
+</html>
