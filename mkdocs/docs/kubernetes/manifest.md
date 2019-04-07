@@ -69,14 +69,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: handson
-  name: handson
+    run: handson-4
+  name: handson-4
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    run: handson
+    run: handson-4
   type: LoadBalancer
 ```
 
